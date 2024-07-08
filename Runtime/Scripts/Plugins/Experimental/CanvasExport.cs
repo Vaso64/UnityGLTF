@@ -37,7 +37,7 @@ namespace UnityGLTF.Plugins
 
             // force refresh
             var r = transform.GetComponent<CanvasRenderer>();
-            if (r) r.GetType().GetMethod("RequestRefresh", (BindingFlags)(-1)).Invoke(r, null);
+            if (r) r.GetType().GetMethod("RequestRefresh", (BindingFlags)(-1))?.Invoke(r, null);
             
             var canvas = g.GetComponent<Graphic>() ? g.GetComponent<Graphic>().canvas : null;
             var canvasRect = canvas ? canvas.GetComponent<RectTransform>().rect : new Rect(0,0,1000,1000);
